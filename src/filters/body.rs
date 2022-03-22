@@ -281,7 +281,7 @@ fn is_content_type<D: Decode>() -> impl Filter<Extract = (), Error = Rejection> 
             future::ok(())
         } else {
             tracing::debug!("no content-type found");
-            future::err(reject::unsupported_media_type())
+            future::ok(())
         }
     })
 }
