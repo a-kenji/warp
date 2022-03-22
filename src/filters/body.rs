@@ -269,7 +269,7 @@ fn is_content_type<D: Decode>() -> impl Filter<Extract = (), Error = Rejection> 
                         type_,
                         subtype
                     );
-                    future::err(reject::unsupported_media_type())
+                    future::ok(())
                 }
             } else {
                 tracing::debug!("content-type {:?} couldn't be parsed", value);
